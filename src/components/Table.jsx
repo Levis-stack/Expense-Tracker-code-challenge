@@ -27,7 +27,7 @@ function Table({ tableData, filter, onDelete, sortKey, setSortKey }) {
         <thead>
           <tr>
             <th>Food</th>
-            <th>Expenses</th>
+            <th>Description</th>
             <th>Category</th>
             <th>Amount</th>
             <th>Date</th>
@@ -38,7 +38,7 @@ function Table({ tableData, filter, onDelete, sortKey, setSortKey }) {
           {filteredData.map((item, index) => (
             <tr key={index}>
               <td>{item.food}</td>
-              <td>{item.expenses}</td>
+              <td>{item.Description}</td>
               <td>{item.category}</td>
               <td>${item.amount}</td>
               <td>{new Date(item.date).toLocaleDateString()}</td>

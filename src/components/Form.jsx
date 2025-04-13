@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 function Form({ onAddExpense }) {
   const [formData, setFormData] = useState({
     food: '',
-    expenses: '',
+    Description: '',
     category: '',
     amount: '',
     date: '',
@@ -16,11 +16,11 @@ function Form({ onAddExpense }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!formData.food || !formData.expenses || !formData.date) return;
+    if (!formData.food || !formData.Description || !formData.date) return;
     onAddExpense({ ...formData, amount: Number(formData.amount) });
     setFormData({
       food: '',
-      expenses: '',
+      Description: '',
       category: '',
       amount: '',
       date: '',
@@ -33,7 +33,7 @@ function Form({ onAddExpense }) {
       <form onSubmit={handleSubmit}>
         <input type="text" name="food" value={formData.food} onChange={handleChange} placeholder="Enter Food Name" />
         <br />
-        <input type="text" name="expenses" value={formData.expenses} onChange={handleChange} placeholder="Enter Expenses Name" />
+        <input type="text" name="Description" value={formData.Description} onChange={handleChange} placeholder="Enter Description Name" />
         <br />
         <input type="text" name="category" value={formData.category} onChange={handleChange} placeholder="Enter Category Name" />
         <br />
